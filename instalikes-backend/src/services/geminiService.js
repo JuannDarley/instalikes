@@ -15,9 +15,9 @@ export default async function gerarDescricaoComGemini(imageBuffer) {
       },
     };
     const res = await model.generateContent([prompt, image]);
-    return res.response.text() || "Alt-text não disponível.";
+    return res.response.text() || "Alt-text not available.";
   } catch (erro) {
-    console.error("Erro ao obter alt-text:", erro.message, erro);
-    throw new Error("Erro ao obter o alt-text do Gemini.");
+    console.error("Error getting alt-text:", erro.message, erro);
+    throw new Error("Error getting Gemini alt-text.");
   }
 }
